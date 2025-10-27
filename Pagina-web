@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ÓptimaOps Consultora · Administración de Operaciones</title>
+  <meta name="description" content="Consultora ficticia para el TPO de Administración de Operaciones. Diagnóstico y mejora de procesos, capacidad, inventarios y supply chain." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand-yellow:#FFCC00; /* tono EY */
+      --brand-gray:#2B2F33;
+      --brand-green:#00A36C; /* acento moderno */
+      --bg:#0f1115;
+      --muted:#6B7280;
+      --card:#12161d;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#E5E7EB;background:var(--bg)}
+    a{color:var(--brand-yellow);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(1.4) blur(8px);background:rgba(15,17,21,.7);border-bottom:1px solid rgba(255,255,255,.06);z-index:20}
+    nav{display:flex;align-items:center;gap:20px;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo h1{font-size:18px;letter-spacing:.3px;margin:0;font-weight:700}
+    .badge{font-size:12px;color:#111;background:var(--brand-yellow);padding:4px 8px;border-radius:999px;font-weight:700}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));color:#fff;font-weight:600}
+    .btn:hover{transform:translateY(-1px);transition:150ms ease}
+    .btn.primary{background:linear-gradient(180deg,var(--brand-yellow),#f0b700);color:#111;border:none}
+    .grid{display:grid;gap:20px}
+    .hero{padding:56px 0 28px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero h2{font-size:42px;line-height:1.08;margin:16px 0 10px}
+    .lead{color:#cfd6e1;max-width:68ch}
+    .cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:24px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    section{padding:34px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+    .section-title{font-size:26px;margin:0 0 12px}
+    ul{margin:8px 0 0 20px;color:#d9dee7}
+    li{margin:6px 0}
+    .kpi{display:flex;gap:10px;align-items:center}
+    .kpi strong{font-size:28px}
+    footer{padding:28px 0;color:#9aa3af}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero h2{font-size:34px}}
+    .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .pill{background:#171b22;border:1px solid rgba(255,255,255,.06);padding:6px 10px;border-radius:999px;color:#cbd5e1;font-size:13px}
+    .note{color:#a3aab6;font-size:13px}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:800px){.contact{grid-template-columns:1fr}}
+    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:#0B0E13;color:#e5e7eb}
+    label{font-size:14px;color:#cbd5e1}
+    .svg-logo{width:36px;height:36px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <svg class="svg-logo" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+              <linearGradient id="y" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#FFCC00"/>
+                <stop offset="100%" stop-color="#F0B700"/>
+              </linearGradient>
+            </defs>
+            <rect x="10" y="34" width="6" height="16" rx="2" fill="#3B3F45"/>
+            <rect x="22" y="30" width="6" height="20" rx="2" fill="#3B3F45"/>
+            <rect x="34" y="24" width="6" height="26" rx="2" fill="#3B3F45"/>
+            <path d="M8 44c20-18 32-14 42-6" fill="none" stroke="url(#y)" stroke-width="6" stroke-linecap="round"/>
+            <path d="M46 30l9 2-4 8" fill="#FFCC00"/>
+          </svg>
+          <h1>ÓptimaOps</h1>
+          <span class="badge">Consultora</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <a class="btn" href="#servicios">Servicios</a>
+          <a class="btn" href="#contacto">Contacto</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="pill" style="display:inline-block;background:rgba(255,204,0,.15);border:1px solid rgba(255,204,0,.35);padding:6px 10px;border-radius:999px;color:#ffd24d">Administración de Operaciones</p>
+          <h2>Diagnóstico y mejora <span style="background:linear-gradient(90deg,#FFCC00,#F0B700);-webkit-background-clip:text;background-clip:text;color:transparent">end-to-end</span> de tu operación</h2>
+          <p class="lead">Somos la consultora del TPO. Evaluamos procesos, capacidad, inventarios y supply chain para proponer mejoras concretas y medibles en PyMEs.</p>
+          <div style="display:flex;gap:10px;margin-top:14px">
+            <a class="btn primary" href="#contacto">Solicitar diagnóstico</a>
+            <a class="btn" href="#metodologia">Ver metodología</a>
+          </div>
+          <div class="pills">
+            <span class="pill">PERT & planificación</span>
+            <span class="pill">FODA • PESTEL • Porter</span>
+            <span class="pill">EOQ • MRP • Layout</span>
+            <span class="pill">Lean • JIT • TPM</span>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <h3>Resultados esperados</h3>
+            <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+              <div class="kpi"><strong>−15%</strong><span>Costos operativos</span></div>
+              <div class="kpi"><strong>+20%</strong><span>Productividad</span></div>
+              <div class="kpi"><strong>−30%</strong><span>Lead time</span></div>
+              <div class="kpi"><strong>+98%</strong><span>Fill rate</span></div>
+            </div>
+            <p class="note">*Valores de referencia objetivos para la propuesta del TP.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <h3 class="section-title">Servicios</h3>
+        <div class="grid cards">
+          <article class="card"><h3>Diagnóstico de Operaciones</h3><p>Mapeo de procesos (VSM), medición de desempeño y detección de cuellos de botella.</p></article>
+          <article class="card"><h3>Planificación y Capacidad</h3><p>Dimensionamiento de CME/CMP, colchón de capacidad y estrategia de incrementos.</p></article>
+          <article class="card"><h3>Inventarios & MRP</h3><p>Políticas EOQ/ROP, clasificación ABC, BOM y corridas MRP con escenarios.</p></article>
+          <article class="card"><h3>Layout & Flujo</h3><p>Balanceo de línea, elección de layout (proceso, producto, celular) y manejo de materiales.</p></article>
+          <article class="card"><h3>Calidad & TPM</h3><p>Plan de control, herramientas estadísticas básicas y programa de mantenimiento.</p></article>
+          <article class="card"><h3>Supply Chain</h3><p>Diagnóstico de madurez, diseño de la red y oportunidades de integración.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodologia">
+      <div class="container">
+        <h3 class="section-title">Metodología</h3>
+        <ol>
+          <li><strong>Kick-off con la empresa</strong> (alcance, supuestos, RT 58).</li>
+          <li><strong>Relevamiento</strong> (entrevistas, datos, tiempos y rendimientos).</li>
+          <li><strong>Análisis</strong> (herramientas de la cursada y KPIs).</li>
+          <li><strong>Propuesta</strong> (quick wins + roadmap trimestral).</li>
+          <li><strong>Entrega</strong> (informe, anexos y presentación para la Feria).</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 🔹 SECCIÓN MODIFICADA -->
+    <section id="equipo">
+      <div class="container">
+        <h3 class="section-title">Equipo ÓptimaOps</h3>
+        <p class="lead">Consultora dedicada al diagnóstico y mejora de operaciones.</p>
+      </div>
+    </section>
+    <!-- 🔹 FIN MODIFICACIÓN -->
+
+    <section id="contacto">
+      <div class="container">
+        <h3 class="section-title">Contacto</h3>
+        <div class="contact">
+          <form class="card" onsubmit="event.preventDefault(); alert('Gracias, responderemos a la brevedad. (Simulado para el TPO)');">
+            <label>Nombre<br><input required placeholder="Tu nombre"/></label><br>
+            <label>Email<br><input required type="email" placeholder="tu@email.com"/></label><br>
+            <label>Mensaje<br><textarea rows="4" placeholder="Contanos tu necesidad"></textarea></label><br>
+            <button class="btn primary" type="submit">Enviar consulta</button>
+          </form>
+          <div class="card">
+            <h3>Datos de la consultora</h3>
+            <p>Dirección: Calle Ficticia 123, CABA</p>
+            <p>Web: <a href="#">optimaops.com</a> (simulada)</p>
+            <p>Mail: <a href="mailto:hola@optimaops.com">hola@optimaops.com</a></p>
+            <p>LinkedIn: <a href="#">/company/optimaops</a></p>
+            <p class="note">Incluyan aquí enlaces al Drive, Trello y Padlet del TPO.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="y"></span> ÓptimaOps · Todos los derechos reservados · Proyecto académico
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
