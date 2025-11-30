@@ -10,7 +10,6 @@
   <link rel="shortcut icon" href="favicon-optimaops.png?v=3" type="image/png">
   <link rel="apple-touch-icon" href="favicon-optimaops.png?v=3">
 
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,6 +26,11 @@
       --card-soft:#151B2B;
       --radius-xl:1.25rem;
       --shadow-soft:0 18px 45px rgba(0,0,0,0.45);
+      /* extras para la sección de contacto */
+      --text:#E5E7EB;
+      --text-soft:#9CA3AF;
+      --border-soft:rgba(148,163,184,0.3);
+      --accent-strong:#FFCC00;
     }
 
     *{box-sizing:border-box;margin:0;padding:0;}
@@ -234,7 +238,7 @@
       padding:1.1rem 1.15rem;
     }
 
-    /* ---- SERVICES, METODO, TEAM ETC: (mantengo igual para no saturar) ---- */
+    /* ---- SECCIONES ---- */
 
     .section{
       margin-top:3rem;
@@ -323,6 +327,111 @@
       margin-bottom:0.2rem;
     }
 
+    /* ---- CONTACTO NUEVO ---- */
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(0,1.1fr);
+      gap:2rem;
+    }
+
+    .contact-card{
+      background:var(--card);
+      border-radius:var(--radius-xl);
+      border:1px solid var(--border-soft);
+      padding:1.4rem 1.4rem 1.5rem;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:0.9rem;
+      margin-bottom:0.8rem;
+      font-size:0.9rem;
+    }
+
+    .contact-icon{
+      width:32px;
+      height:32px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.5);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1rem;
+      background:rgba(15,23,42,0.95);
+    }
+
+    .contact-item span.label{
+      color:var(--text-soft);
+      font-size:0.8rem;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      display:block;
+    }
+
+    .contact-item a.value{
+      font-weight:500;
+    }
+
+    form{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:0.9rem 0.9rem;
+      margin-top:0.4rem;
+      font-size:0.87rem;
+    }
+
+    form .full{
+      grid-column:1 / -1;
+    }
+
+    label{
+      display:block;
+      margin-bottom:0.25rem;
+      font-size:0.78rem;
+      color:var(--text-soft);
+    }
+
+    input,
+    textarea{
+      width:100%;
+      background:#020617;
+      border-radius:10px;
+      border:1px solid rgba(148,163,184,0.52);
+      padding:0.55rem 0.65rem;
+      color:var(--text);
+      font-family:inherit;
+      font-size:0.85rem;
+      outline:none;
+      transition:border-color 0.18s ease,box-shadow 0.18s ease,background 0.18s ease;
+    }
+
+    input:focus,
+    textarea:focus{
+      border-color:var(--accent-strong);
+      box-shadow:0 0 0 1px rgba(250,204,21,0.6);
+      background:#020617;
+    }
+
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    .form-note{
+      font-size:0.75rem;
+      color:var(--text-soft);
+      margin-top:0.5rem;
+    }
+
+    .btn-submit{
+      justify-content:center;
+      width:fit-content;
+      padding-inline:1.5rem;
+    }
+
     /* ---- FOOTER ---- */
 
     footer{
@@ -343,6 +452,13 @@
       height:34px;
       object-fit:contain;
       margin-right:0.4rem;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:0.75rem;
+      font-size:0.78rem;
+      color:var(--muted);
     }
 
   </style>
@@ -491,18 +607,92 @@
       </div>
     </section>
 
-    <!-- CONTACTO -->
+    <!-- CONTACTO NUEVO -->
     <section id="contacto" class="section">
       <header class="section-header">
         <div class="section-kicker">Contacto</div>
-        <h2 class="section-title">¿Querés ver el informe completo?</h2>
-        <p class="section-subtitle">Podemos agregar tu enlace real de Drive/OneDrive.</p>
+        <h2 class="section-title">¿Hablamos de tu operación?</h2>
+        <p class="section-subtitle">
+          Contanos brevemente en qué punto está tu operación hoy y qué te gustaría lograr.
+          Te responderemos en un plazo máximo de 24/48 horas hábiles.
+        </p>
       </header>
 
-      <article class="card">
-        <p>Correo: consultora.optimaops@example.com</p>
-        <p>Informe: https://enlace-a-tu-informe.com</p>
-      </article>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <span class="label">Correo</span>
+              <a class="value" href="mailto:contacto@optimaops.com">contacto@optimaops.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <span class="label">WhatsApp</span>
+              <a class="value" href="https://wa.me/5491155555555" target="_blank" rel="noopener">
+                +54 9 11 5555-5555
+              </a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🌐</div>
+            <div>
+              <span class="label">LinkedIn</span>
+              <a class="value" href="https://www.linkedin.com/company/optimaops" target="_blank" rel="noopener">
+                /company/optimaops
+              </a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <span class="label">Ubicación</span>
+              <span class="value">Buenos Aires · Argentina · Proyectos remotos y presenciales</span>
+            </div>
+          </div>
+          <p class="form-note" style="margin-top:0.8rem;">
+            También podemos coordinar una reunión exploratoria de 30 minutos sin costo
+            para entender si tiene sentido trabajar juntos.
+          </p>
+        </div>
+
+        <div>
+          <form action="mailto:contacto@optimaops.com" method="post" enctype="text/plain">
+            <div>
+              <label for="nombre">Nombre y empresa</label>
+              <input id="nombre" name="Nombre" placeholder="Ej: Ana Pérez · Fábrica de snacks S.A." required>
+            </div>
+            <div>
+              <label for="email">Correo</label>
+              <input id="email" type="email" name="Email" placeholder="tu@empresa.com" required>
+            </div>
+            <div>
+              <label for="rol">Rol</label>
+              <input id="rol" name="Rol" placeholder="Ej: Gerente de Operaciones">
+            </div>
+            <div>
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input id="telefono" name="Teléfono" placeholder="+54 9 11 ...">
+            </div>
+            <div class="full">
+              <label for="mensaje">¿Qué te gustaría mejorar?</label>
+              <textarea id="mensaje" name="Mensaje"
+                placeholder="Ej: tenemos cuellos de botella en envasado, inventarios altos y poca visibilidad de capacidad real."></textarea>
+            </div>
+            <div class="full" style="margin-top:0.2rem;">
+              <button type="submit" class="btn btn-primary btn-submit">
+                Enviar mensaje
+              </button>
+            </div>
+          </form>
+          <p class="form-note">
+            Si el botón no funciona en tu navegador, escribinos directo a
+            <strong>contacto@optimaops.com</strong>.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- FOOTER -->
@@ -520,7 +710,3 @@
   </div>
 </body>
 </html>
-
-
-
-
